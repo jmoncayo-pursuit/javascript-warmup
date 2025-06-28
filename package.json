@@ -1,0 +1,38 @@
+{
+  "name": "jslingo",
+  "version": "1.0.0",
+  "description": "Interactive JavaScript learning game with 15 progressive levels",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "javascript",
+    "learning",
+    "education",
+    "game",
+    "interactive",
+    "programming",
+    "tutorial",
+    "beginner-friendly",
+    "code-challenges",
+    "web-development"
+  ],
+  "author": "JSlingo Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmoncayo-pursuit/jslingo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jmoncayo-pursuit/jslingo/issues"
+  },
+  "homepage": "https://jmoncayo-pursuit.github.io/jslingo",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+} 
