@@ -1,0 +1,591 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+#app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #667eea;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.app-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #667eea;
+    margin: 0;
+}
+
+.progress-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.streak-counter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #fff3cd;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    color: #856404;
+}
+
+.streak-counter i {
+    color: #ffc107;
+}
+
+.streak-label {
+    font-size: 0.875rem;
+}
+
+.level-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.level-btn:hover {
+    background: #5a6fd8;
+}
+
+/* Progress Bar */
+.progress-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 1rem;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 0.5rem;
+    background: #e9ecef;
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 0.25rem;
+    transition: width 0.5s ease;
+    width: 0%;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 1rem;
+    max-width: 800px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.modal-header h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #666;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+    background: #f8f9fa;
+}
+
+.level-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.level-card {
+    padding: 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 0.5rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: white;
+}
+
+.level-card:hover:not(.locked) {
+    border-color: #667eea;
+    background: #f8f9ff;
+}
+
+.level-card.completed {
+    border-color: #28a745;
+    background: #f8fff9;
+}
+
+.level-card.current {
+    border-color: #667eea;
+    background: #f8f9ff;
+}
+
+.level-card.locked {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.level-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.level-number {
+    font-size: 0.875rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.level-card h3 {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.level-card p {
+    font-size: 0.875rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    flex: 1;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Instructions Panel */
+.instructions-panel {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.level-header {
+    margin-bottom: 2rem;
+}
+
+.level-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#level-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0;
+}
+
+.completion-icon {
+    color: #28a745;
+    font-size: 1.5rem;
+}
+
+.level-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.task-container {
+    background: #e3f2fd;
+    border-left: 4px solid #2196f3;
+    padding: 1rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.task-container h3 {
+    color: #1976d2;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.task-container p {
+    color: #1565c0;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Hint Section */
+.hint-section {
+    margin-bottom: 2rem;
+}
+
+.hint-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    color: #ff9800;
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.hint-btn:hover {
+    color: #f57c00;
+}
+
+.hint-content {
+    margin-top: 1rem;
+    background: #fff3e0;
+    border-left: 4px solid #ff9800;
+    padding: 1rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.hint-content p {
+    color: #e65100;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Feedback */
+.feedback-container {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.feedback-container.success {
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.feedback-container.error {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.feedback-container.loading {
+    background: #d1ecf1;
+    border: 1px solid #bee5eb;
+    color: #0c5460;
+}
+
+.feedback-message {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.feedback-explanation {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.output-section {
+    margin-bottom: 0.5rem;
+}
+
+.output-label {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+
+.output-code {
+    background: #f8f9fa;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+    white-space: pre-wrap;
+}
+
+.tip-section {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: #e3f2fd;
+    border-radius: 0.25rem;
+}
+
+.tip-section strong {
+    color: #1976d2;
+}
+
+/* Code Panel */
+.code-panel {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.code-header {
+    background: #2d3748;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.code-header h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.code-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.control-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: #4a5568;
+    color: white;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.control-btn:hover {
+    background: #718096;
+}
+
+.control-btn.run-btn {
+    background: #38a169;
+}
+
+.control-btn.run-btn:hover {
+    background: #2f855a;
+}
+
+.code-editor-container {
+    height: 400px;
+}
+
+.code-editor {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+    background: #1a202c;
+    color: #68d391;
+    border: none;
+    resize: none;
+    outline: none;
+    line-height: 1.5;
+}
+
+.code-editor::placeholder {
+    color: #718096;
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.nav-btn {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-weight: 500;
+}
+
+.nav-btn:hover:not(:disabled) {
+    background: #5a6268;
+}
+
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.nav-btn:last-child {
+    background: #667eea;
+}
+
+.nav-btn:last-child:hover:not(:disabled) {
+    background: #5a6fd8;
+}
+
+.level-indicator {
+    text-align: center;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .header-left {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .instructions-panel,
+    .code-panel {
+        padding: 1rem;
+    }
+    
+    .level-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .navigation {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-title {
+        font-size: 1.5rem;
+    }
+    
+    .header-content {
+        padding: 1rem;
+    }
+    
+    .progress-container {
+        padding: 0 1rem 1rem;
+    }
+} 

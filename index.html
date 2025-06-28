@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSlingo - Learn JavaScript</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1 class="app-title">JSlingo</h1>
+                    <div class="progress-info">
+                        <i class="fas fa-trophy"></i>
+                        <span id="progress-text">0/15 Levels</span>
+                    </div>
+                </div>
+                
+                <div class="header-right">
+                    <div class="streak-counter">
+                        <i class="fas fa-fire"></i>
+                        <span id="streak-count">0</span>
+                        <span class="streak-label">streak</span>
+                    </div>
+                    
+                    <button id="level-selector-btn" class="level-btn">
+                        Level <span id="current-level">1</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-labels">
+                    <span>Overall Progress</span>
+                    <span id="progress-percentage">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Level Selector Modal -->
+        <div id="level-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Select Level</h2>
+                    <button id="close-modal" class="close-btn">&times;</button>
+                </div>
+                <div id="level-grid" class="level-grid">
+                    <!-- Levels will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-grid">
+                <!-- Left Panel - Instructions -->
+                <div class="instructions-panel">
+                    <div class="level-header">
+                        <div class="level-title-container">
+                            <h2 id="level-title">Level 1: Hello World</h2>
+                            <div id="completion-icon" class="completion-icon hidden">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                        
+                        <p id="level-description" class="level-description">
+                            Welcome to JavaScript! Let's start with the traditional first program.
+                        </p>
+                        
+                        <div class="task-container">
+                            <h3>Task:</h3>
+                            <p id="level-task">Write a program that prints 'Hello, World!' to the console.</p>
+                        </div>
+                    </div>
+
+                    <!-- Hint Section -->
+                    <div class="hint-section">
+                        <button id="hint-toggle" class="hint-btn">
+                            <i class="fas fa-lightbulb"></i>
+                            <span id="hint-text">Show Hint</span>
+                        </button>
+                        
+                        <div id="hint-content" class="hint-content hidden">
+                            <p id="hint-text-content">Use console.log() with the text in quotes: console.log('Hello, World!')</p>
+                        </div>
+                    </div>
+
+                    <!-- Feedback -->
+                    <div id="feedback-container" class="feedback-container hidden">
+                        <!-- Feedback content will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Right Panel - Code Editor -->
+                <div class="code-panel">
+                    <div class="code-header">
+                        <h3>JavaScript Code Editor</h3>
+                        <div class="code-controls">
+                            <button id="reset-btn" class="control-btn">
+                                <i class="fas fa-undo"></i>
+                                <span>Reset</span>
+                            </button>
+                            <button id="run-btn" class="control-btn run-btn">
+                                <i class="fas fa-play"></i>
+                                <span>Run Code</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="code-editor-container">
+                        <textarea 
+                            id="code-editor" 
+                            class="code-editor" 
+                            placeholder="Write your JavaScript code here..."
+                            spellcheck="false"
+                        ></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="navigation">
+                <button id="prev-btn" class="nav-btn" disabled>
+                    Previous Level
+                </button>
+                
+                <div class="level-indicator">
+                    <span id="level-indicator-text">Level 1 of 15</span>
+                </div>
+                
+                <button id="next-btn" class="nav-btn" disabled>
+                    Next Level
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
