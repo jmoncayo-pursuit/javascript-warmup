@@ -26,12 +26,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jmoncayo-pursuit/jslingo.git"
+    "url": "git+https://github.com/jmoncayo-pursuit/javascript-warmup.git"
   },
   "bugs": {
-    "url": "https://github.com/jmoncayo-pursuit/jslingo/issues"
+    "url": "https://github.com/jmoncayo-pursuit/javascript-warmup/issues"
   },
-  "homepage": "https://jmoncayo-pursuit.github.io/jslingo",
+  "homepage": "https://jmoncayo-pursuit.github.io/javascript-warmup",
   "engines": {
     "node": ">=14.0.0"
   },

@@ -90,7 +90,7 @@ JavaScript Warmup is an interactive JavaScript learning game that teaches progra
 ### File Structure
 
 ```
-JavaScript-Warmup/
+javascript-warmup/
 ├── index.html      # Main HTML file
 ├── styles.css      # CSS styles and responsive design
 ├── script.js       # Game logic and JavaScript engine

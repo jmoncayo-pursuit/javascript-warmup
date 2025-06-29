@@ -6,14 +6,14 @@ JavaScript Warmup is designed to be deployed on GitHub Pages. Here's how to set 
 
 ### Automatic Deployment (Recommended)
 
-1. Go to your repository on GitHub: https://github.com/jmoncayo-pursuit/jslingo
+1. Go to your repository on GitHub: https://github.com/jmoncayo-pursuit/javascript-warmup
 2. Click on "Settings" tab
 3. Scroll down to "Pages" section in the left sidebar
 4. Under "Source", select "Deploy from a branch"
 5. Choose "main" branch and "/ (root)" folder
 6. Click "Save"
 
-Your site will be available at: `https://jmoncayo-pursuit.github.io/jslingo`
+Your site will be available at: `https://jmoncayo-pursuit.github.io/javascript-warmup`
 
 ### Manual Deployment
 
@@ -41,8 +41,8 @@ For local development:
 
 ```bash
 # Clone the repository
-git clone https://github.com/jmoncayo-pursuit/jslingo.git
-cd jslingo
+git clone https://github.com/jmoncayo-pursuit/javascript-warmup.git
+cd javascript-warmup
 
 # Start local server
 python3 -m http.server 8000
