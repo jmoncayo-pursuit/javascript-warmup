@@ -1,5 +1,5 @@
 {
-  "name": "jslingo",
+  "name": "javascript-warmup",
   "version": "1.0.0",
   "description": "Interactive JavaScript learning game with 15 progressive levels",
   "main": "index.html",
@@ -18,9 +18,11 @@
     "tutorial",
     "beginner-friendly",
     "code-challenges",
-    "web-development"
+    "web-development",
+    "warmup",
+    "practice"
   ],
-  "author": "JSlingo Team",
+  "author": "JavaScript Warmup Team",
   "license": "MIT",
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
-# JSlingo - Learn JavaScript Through Interactive Challenges
+# JavaScript Warmup - Learn JavaScript Through Interactive Challenges
 
-JSlingo is an interactive JavaScript learning game that teaches programming concepts through hands-on coding challenges. It's a complete rewrite of the original PyLingo game, adapted for JavaScript learners.
+JavaScript Warmup is an interactive JavaScript learning game that teaches programming concepts through hands-on coding challenges. It's designed to help beginners get comfortable with JavaScript fundamentals.
 
 ## 🎯 Features
 
@@ -90,7 +90,7 @@ JSlingo is an interactive JavaScript learning game that teaches programming conc
 ### File Structure
 
 ```
-JSlingo/
+JavaScript-Warmup/
 ├── index.html      # Main HTML file
 ├── styles.css      # CSS styles and responsive design
 ├── script.js       # Game logic and JavaScript engine
@@ -144,7 +144,7 @@ Potential features for future versions:
 
 ## 🤝 Contributing
 
-Feel free to contribute to JSlingo:
+Feel free to contribute to JavaScript Warmup:
 
 - Report bugs or issues
 - Suggest new levels or features
@@ -157,7 +157,7 @@ This project is open source and available under the MIT License.
 
 ## 🎉 Enjoy Learning!
 
-JSlingo is designed to make learning JavaScript fun and interactive. Start with the basics and work your way up to become a confident JavaScript programmer!
+JavaScript Warmup is designed to make learning JavaScript fun and interactive. Start with the basics and work your way up to become a confident JavaScript programmer!
 
 ---
 

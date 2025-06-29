@@ -1,5 +1,5 @@
-// JSlingo - JavaScript Learning Game
-class JSlingo {
+// JavaScript Warmup - Interactive Learning Game
+class JavaScriptWarmup {
     constructor() {
         this.currentLevel = 1;
         this.completedLevels = new Set();
@@ -471,5 +471,5 @@ class JSlingo {
 
 // Initialize the game when the page loads
 document.addEventListener('DOMContentLoaded', () => {
-    new JSlingo();
+    new JavaScriptWarmup();
 }); 

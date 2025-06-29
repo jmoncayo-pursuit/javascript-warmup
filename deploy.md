@@ -1,8 +1,8 @@
-# Deploying JSlingo
+# Deploying JavaScript Warmup
 
 ## GitHub Pages Deployment
 
-JSlingo is designed to be deployed on GitHub Pages. Here's how to set it up:
+JavaScript Warmup is designed to be deployed on GitHub Pages. Here's how to set it up:
 
 ### Automatic Deployment (Recommended)
 

@@ -526,8 +526,9 @@ body {
 
 .level-indicator {
     text-align: center;
-    color: #666;
-    font-weight: 500;
+    color: #333;
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
 /* Utility Classes */
